@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Haven Feedback</title>
+
+    <link rel="stylesheet" href="../../Desktop/CSS.css">
+    <link rel="stylesheet" href="../../Desktop/Feedbackbuttons.css">
+</head>
+
+<body>
+    <img src="../../Desktop/1745.png" alt="Book Haven Logo">
+
+    <aside class="sidebar">
+        <h2>Welcome to Book Haven</h2>
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="secondary try.html">Gallery</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="About Us.html">About Us</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <h1>Book Haven Customer Feedback</h1>
+
+        <p>
+            Please complete this questionnaire to tell us about your experience
+            at Book Haven.
+        </p>
+
+        <form id="feedbackForm">
+            <div>
+                <label for="customerNames">Name:</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="customerEmail">Email:</label>
+                <input
+                    type="email"
+                    id="customerEmail"
+                    name="customerEmail"
+                    required
+                >
+            </div>
+
+            <fieldset>
+                <legend>How would you rate your experience?</legend>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="rating"
+                        value="Excellent"
+                        required
+                    >
+                    Excellent
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="Good">
+                    Good
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="Average">
+                    Average
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="Poor">
+                    Poor
+                </label>
+            </fieldset>
+
+            <div>
+                <label for="favoriteSection">
+                    What is your favorite section of the bookstore?
+                </label>
+
+                <select id="favoriteSection" name="favoriteSection" required>
+                    <option value="">Select a section</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Nonfiction">Nonfiction</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Children">Children's Books</option>
+                    <option value="Magazines">Magazines</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="customerFeedback">
+                    How can we improve your experience?
+                </label>
+
+                <textarea
+                    id="customerFeedback"
+                    name="customerFeedback"
+                    rows="6"
+                    placeholder="Enter your feedback here..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <p
+            id="feedbackMessage"
+            role="status"
+            aria-live="polite"
+        ></p>
+    </main>
+	<p>
+        Complete the questionnaire below to request a custom order.
+    </p>
+
+    <form id="customOrderForm">
+        <label for="customerName">Name:</label>
+        <input
+            type="text"
+            id="customerNames"
+            name="customerNames"
+            required
+        >
+
+        <br><br>
+
+        <label for="customerEmails">Email:</label>
+        <input
+            type="email"
+            id="customerEmails"
+            name="customerEmails"
+            required
+        >
+
+        <br><br>
+
+        <label for="itemType">Type of item:</label>
+        <select id="itemType" name="itemType" required>
+            <option value="">Choose an item type</option>
+            <option value="Book">Book</option>
+            <option value="Magazine">Magazine</option>
+            <option value="Office supplies">Office supplies</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <br><br>
+
+        <label for="itemTitle">Item title:</label>
+        <input
+            type="text"
+            id="itemTitle"
+            name="itemTitle"
+            required
+        >
+
+        <br><br>
+
+        <label for="author">Author or brand:</label>
+        <input
+            type="text"
+            id="author"
+            name="author"
+        >
+
+        <br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            value="1"
+            required
+        >
+
+        <br><br>
+
+        <label for="orderDetails">Additional details:</label>
+        <textarea
+            id="orderDetails"
+            name="orderDetails"
+            rows="5"
+            placeholder="Include an ISBN, edition, color, size, or other details"
+        ></textarea>
+
+        <br><br>
+
+        <button type="submit">Submit Custom Order</button>
+        <button type="button" id="clearFormButton">Clear Form</button>
+    </form>
+
+    <p id="orderMessage"></p>
+
+    <script>
+    // Feedback form
+    const feedbackForm = document.getElementById("feedbackForm");
+    const feedbackMessage = document.getElementById("feedbackMessage");
+
+    feedbackForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        feedbackMessage.textContent = "Thank you for your feedback";
+        feedbackForm.reset();
+    });
+
+    customOrderForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const orderInformation = {
+        customerName: document.getElementById("customerNames").value,
+        customerEmail: document.getElementById("customerEmails").value,
+        itemType: document.getElementById("itemType").value,
+        itemTitle: document.getElementById("itemTitle").value,
+        author: document.getElementById("author").value,
+        quantity: document.getElementById("quantity").value,
+        orderDetails: document.getElementById("orderDetails").value
+    };
+
+    sessionStorage.setItem(
+        "customOrder",
+        JSON.stringify(orderInformation)
+    );
+
+    orderMessage.textContent =
+        "Thank you! Your custom order request has been submitted.";
+});
+
+</script>
+</body>
+</html>

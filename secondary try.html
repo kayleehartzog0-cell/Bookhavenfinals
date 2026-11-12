@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Haven Products</title>
+
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="Cartadditions.css">
+
+    <style>
+        .sidebar {
+            float: left;
+        }
+
+        #cartBox {
+            display: none;
+        }
+
+        .message {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../Downloads/1745.png" alt="Book Haven Logo">
+        <h1>Book Haven</h1>
+        <h2>Our Products</h2>
+    </header>
+
+    <aside class="sidebar">
+        <h2>Welcome to Book Haven</h2>
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="secondary try.html">Gallery</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="About Us.html">About Us</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <button class="cart-button" type="button" onclick="toggleCart()">
+            View Cart (<span id="cartCount">0</span>)
+        </button>
+
+        <div id="cartBox">
+            <h2>Shopping Cart</h2>
+
+            <p id="message" class="message"></p>
+            <ul id="cartItems"></ul>
+            <h3 id="total">Total: $0.00</h3>
+
+            <button class="clear-button" type="button" onclick="clearCart()">
+                Clear Cart
+            </button>
+
+            <button class="process-button" type="button" onclick="processOrder()">
+                Process Order
+            </button>
+
+            <button type="button" onclick="toggleCart()">Close Cart</button>
+        </div>
+
+        <table>
+            <tr>
+                <td>
+                    <img src="../Desktop/Ball.png" alt="Ball">
+                    <h3>The book that explains pickleball</h3>
+                    <p>$17.99</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Ball', 17.99)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Desktop/BookHaven.png" alt="Book Haven">
+                    <h3>The book about Book Haven</h3>
+                    <p>$15.99</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Book Haven', 15.99)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Desktop/Eat.png" alt="Food Magazine">
+                    <h3>Magazine about food</h3>
+                    <p>$10.54</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Food Magazine', 10.54)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Desktop/ReadREadRead.png" alt="Read Bag">
+                    <h3>Bag that says "Read, Read, Read"</h3>
+                    <p>$25.00</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Read Bag', 25.00)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Desktop/Stickers.png" alt="Stickers">
+                    <h3>Stickers with jokes and Book Haven designs</h3>
+                    <p>$17.00</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Stickers', 17.00)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Desktop/Travel.png" alt="Travel Magazine">
+                    <h3>Travel Magazine</h3>
+                    <p>$13.00</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Travel Magazine', 13.00)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Downloads/Sorcerers.png" alt="Sorcerers">
+                    <h3>A fantasy book that will enthrall all</h3>
+                    <p>$14.50</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Sorcerers', 14.50)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Downloads/GloryRIders.png" alt="Glory Riders">
+                    <h3>Glory Riders is definitely a fun ride</h3>
+                    <p>$9.99</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Glory Riders', 9.99)">
+                        Add to Cart
+                    </button>
+                </td>
+
+                <td>
+                    <img src="../Downloads/CheeseBook.png" alt="Cheese Book">
+                    <h3>Book for cheese lovers</h3>
+                    <p>$11.99</p>
+                    <button
+                        class="add-button"
+                        type="button"
+                        onclick="addToCart('Cheese Book', 11.99)">
+                        Add to Cart
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Follow Book Haven</h3>
+                <p>Stay connected with us!</p>
+                <a href="[instagram.com](https://www.instagram.com/)" target="_blank">
+                    Follow us on Instagram
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Join Our Newsletter</h3>
+                <p>Get updates on new releases and special offers!</p>
+
+                <form id="newsletterForm">
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required>
+
+                    <button type="submit">Subscribe</button>
+                </form>
+
+                <p id="subscriptionMessage" class="message"></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Book Haven. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let messageTimer;
+
+        function showCartMessage(text) {
+            const message = document.getElementById("message");
+
+            clearTimeout(messageTimer);
+            message.textContent = text;
+
+            messageTimer = setTimeout(function () {
+                message.textContent = "";
+            }, 3000);
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(function (item) {
+                return item.name === name;
+            });
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+			sessionStorage.setItem("cart",JSON.stringify(cart));
+
+            displayCart();
+            showCartMessage(name + " has been added to your cart!");
+        }
+
+        function displayCart() {
+            const cartItems = document.getElementById("cartItems");
+            let total = 0;
+            let count = 0;
+
+            cartItems.innerHTML = "";
+
+            cart.forEach(function (item) {
+                const itemTotal = item.price * item.quantity;
+                const listItem = document.createElement("li");
+
+                listItem.textContent =
+                    item.name +
+                    "x" +
+                    item.quantity +
+                    "-$" +
+                    itemTotal.toFixed(2);
+
+                cartItems.appendChild(listItem);
+                total += itemTotal;
+                count += item.quantity;
+            });
+
+            document.getElementById("total").textContent =
+                "Total: $" + total.toFixed(2);
+
+            document.getElementById("cartCount").textContent = count;
+        }
+
+        function toggleCart() {
+            const cartBox = document.getElementById("cartBox");
+
+            if (cartBox.style.display === "block") {
+                cartBox.style.display = "none";
+            } else {
+                cartBox.style.display = "block";
+            }
+        }
+
+        function clearCart() {
+			sessionStorage.clear("cart");
+            cart = [];
+            displayCart();
+            showCartMessage("Your cart has been cleared.");
+        }
+
+        function processOrder() {
+            if (cart.length === 0) {
+                showCartMessage("Your cart is empty!");
+                return;
+            }
+
+            cart = [];
+			sessionStorage.removeItem("cart");
+			
+            displayCart();
+            showCartMessage("Your order has been processed!");
+			
+        }
+
+        document
+            .getElementById("newsletterForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                document.getElementById("subscriptionMessage").textContent =
+                    "Thank you for subscribing!";
+
+                document.getElementById("email").value = "";
+				
+            });
+		displayCart();
+    </script>
+</body>
+</html>

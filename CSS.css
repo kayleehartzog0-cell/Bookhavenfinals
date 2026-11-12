@@ -1,0 +1,56 @@
+
+/*Background coloring*/
+		body {
+	background-color:#2E2E4E;
+	}
+/*Sidebar coloring and selection colors*/
+h1 {
+	font-family: Courier New Bold;
+	text-align: center;
+	color:#C1CFD6;
+	font-size: 40px;
+}
+h2 {
+	font-family: Georgia Bold;
+	text-align: center;
+	color:#C1CFD6;
+	font-size: 30px;
+}
+h3 {
+	font-family: Comic Sans MS Normal;
+	text-align: left;
+	color:#C1CFD6;
+	font-size: 20px;
+}
+h4 {
+	font-family: Calbri Normal;
+	text-align: left;
+	color:#C1CFD6;
+	font-size: 11px;
+}
+		.sidebar {
+	width: 220px;
+	background-color:#5C2E5C;
+	padding: 20px;
+	min-height: 100vh;
+	float:right;
+		}
+	.sidebar h2 {
+	color:#C1CFD6;
+	text-align: center;
+		}
+	.sidebar ul {
+	list-style: none;
+	padding:0;
+		}
+	.sidebar li a {
+	display: block;
+	color:#C1CFD6;
+	text-decoration: none;
+	padding: 12px;
+	font-size: 17px;
+		}
+	.sidebar li a:hover {
+	background-color: #3F5461;
+	color:purple;
+}

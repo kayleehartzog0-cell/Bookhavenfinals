@@ -1,0 +1,19 @@
+.custom-button {
+	display: inline-block;
+	background-color:#C1CFD6;
+	color: white;
+	font-family: calbri normal;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 12px 25px;
+	border-radius: 8px;
+	border: 2px solid #EE583F;
+	transition: 0.3s;
+	}
+.custom-button:hover {
+	background-color: white;
+	color: #EE583F;
+}
+/* Feedback Buttons */
+
